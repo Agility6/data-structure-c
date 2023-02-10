@@ -223,6 +223,27 @@ void CreateCircList_R(CircList &C , int n) {
   }
 }
 
+// 带尾指针循环链表的合并
+/**
+  Ta,Tb都是非空的单循环链表
+*/
+LinkList Connect(LinkList Ta, LinkList Tb) {
+
+  CLNode *p;
+
+  // 1.p存表头结点
+  P = Ta -> next;
+  // 2.Tb表头连接Ta尾
+  Ta -> next = Tb -> next -> next;
+  // 3. 释放Tb表头结点
+  free(Tb -> next);
+  // 4. 修改指针
+  p Tb -> next = p;
+
+  return Tb
+
+}
+
 void GetAllElem(CircList C) {
 
 	CLNode *p;
