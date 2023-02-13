@@ -72,3 +72,7 @@ void ListDelete_DuL(DuLinkList &L, int i, ElemType &e) {
   return OK;
 
 }
+
+int main() {
+  
+}
