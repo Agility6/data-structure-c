@@ -79,7 +79,7 @@ Status GetElem_C(CircList C, int i, ElemType &e) {
   p = C;
   j = 0;
 
-  while( p != C && j < i) {
+  while( p -> next != C && j < i) {
     p = p -> next;
     j++;
   }
@@ -226,23 +226,24 @@ void CreateCircList_R(CircList &C , int n) {
 // 带尾指针循环链表的合并
 /**
   Ta,Tb都是非空的单循环链表
+  伪代码
 */
-LinkList Connect(LinkList Ta, LinkList Tb) {
+// LinkList Connect(LinkList Ta, LinkList Tb) {
 
-  CLNode *p;
+//   CLNode *p;
 
-  // 1.p存表头结点
-  P = Ta -> next;
-  // 2.Tb表头连接Ta尾
-  Ta -> next = Tb -> next -> next;
-  // 3. 释放Tb表头结点
-  free(Tb -> next);
-  // 4. 修改指针
-  p Tb -> next = p;
+//   // 1.p存表头结点
+//   P = Ta -> next;
+//   // 2.Tb表头连接Ta尾
+//   Ta -> next = Tb -> next -> next;
+//   // 3. 释放Tb表头结点
+//   free(Tb -> next);
+//   // 4. 修改指针
+//   p Tb -> next = p;
 
-  return Tb
+//   return Tb
 
-}
+// }
 
 void GetAllElem(CircList C) {
 
@@ -279,11 +280,19 @@ int main() {
   ListInsert_C(C, 7, 1013);
   GetAllElem(C);
 
+  // GetElem_C
+  ElemType GetElem_C_value_result;
+  GetElem_C(C, 2, GetElem_C_value_result);
+  printf("GetElem_C_value_result = %d\n", GetElem_C_value_result);
+
+
+
+
   // ListDelete_C
-  ElemType ListDelete_C_result;
-  ListDelete_C(C, 6, ListDelete_C_result);
-  GetAllElem(C);
-  printf("ListDelete_C_result = %d\n", ListDelete_C_result);
+  // ElemType ListDelete_C_result;
+  // ListDelete_C(C, 6, ListDelete_C_result);
+  // GetAllElem(C);
+  // printf("ListDelete_C_result = %d\n", ListDelete_C_result);
  
 
 }
