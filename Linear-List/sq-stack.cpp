@@ -12,7 +12,7 @@
 typedef int Status;
 typedef int SElemType;
 
-struct SqStack {
+typedef struct SqStack {
   SElemType *base;
   SElemType *top;
   int stackSize;
