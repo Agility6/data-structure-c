@@ -71,6 +71,7 @@ int Copy(BiTree T, BiTree &NewT) {
 */
 int Depth(BiTree T) {
 
+  int m, n;
   if(T == NULL) {
     return 0;
   } else {
@@ -83,6 +84,46 @@ int Depth(BiTree T) {
     }
   }
 
+}
+
+// 4. 求二叉树的结点数
+/**
+  与计算深度类似
+  1. 图解
+*/
+int CountNode(BiTree T) {
+  
+  int m,n;
+  if(T == NULL) {
+    return 0;
+  }
+
+  m = CountNode(T -> lchild);
+  n = CountNode(T -> rchild);
+
+  return m + n;
+  // return CountNode(T -> lchild) + CountNode(T -> rchild);
+
+}
+
+// 5. 求二叉树的叶子结点
+/**
+  1. 判断左右孩子有没有结点
+*/
+int LeadCount(BiTree T) {
+  
+  if(T == NULL) {
+    return 0;
+  }
+
+  // 左右孩子都应该是空
+  if((T -> lchild == NULL) && (T -> rchild == NULL)) {
+    return 1;
+  } else {
+    // 不为空说明左右有孩子
+    LeadCount(T -> lchild);
+    LeadCount(T -> rchild);
+  }
 }
 
 int main() {
