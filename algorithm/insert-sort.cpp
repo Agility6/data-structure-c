@@ -30,7 +30,7 @@ void insertSort(int arr[], int arrLength) {
 */
 void insertSort_2(int arr[], int index, int arrLength) {
 
-  if(index > 0 && index < arrLength) {
+  if(index >= 0 && index < arrLength) {
     if(arr[index] < arr[index-1]) {
       int temp = arr[index];
       arr[index] = arr[index - 1];
@@ -65,10 +65,10 @@ int main() {
   int arrLength2 = sizeof(arr2)/4;
   int arrLength3 = sizeof(arr3)/4;
 
-  
-  insertSort(arr, arrLength);
-  insertSort(arr2, arrLength2);
-  insertSort(arr3, arrLength3);
+
+ insertSort(arr, arrLength);
+ insertSort(arr2, arrLength2);
+ insertSort(arr3, arrLength3);
 
   // 递归版
   // insertSort_2(arr, 1, arrLength);
